@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Comment from './Comment';
 import './CommentSection.css';
 
@@ -8,14 +9,17 @@ class CommentSection extends React.Component {
       <div className="comment-section-container">
         {this.props.comments.map(comment => (
           <Comment
-            key={`${comment.username}${comment.text}`}
-            userName={comment.username}
-            text={comment.text}
+            key={`${comment.username}${comment.text}`} // joined two props to form a unique key
+            comment={comment}
           />
         ))}
       </div>
     );
   }
 }
+
+CommentSection.propTypes = {
+  comments: PropTypes.array
+};
 
 export default CommentSection;
