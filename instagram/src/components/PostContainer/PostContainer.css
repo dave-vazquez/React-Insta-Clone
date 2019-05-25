@@ -1,0 +1,27 @@
+.post-container {
+  border: 1px solid black;
+}
+
+.username-container {
+  display: flex;
+  align-items: center;
+
+  padding: 10px;
+}
+
+.user-thumbnail {
+  width: 25px;
+  height: 25px;
+
+  border-radius: 50%;
+}
+
+.username {
+  margin-left: 10px;
+
+  font-size: 0.8rem;
+}
+
+.image-post {
+  width: 100%;
+}
