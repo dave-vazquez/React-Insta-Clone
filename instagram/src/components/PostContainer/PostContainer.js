@@ -1,42 +1,32 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import CommentSection from '../CommentSection/CommentSection';
-import './PostContainer.css';
-import IconContainer from './IconContainer';
+import React from "react";
+import PropTypes from "prop-types";
 
-function PostContainer(props) {
+import CommentSection from "../CommentSection/CommentSection";
+import IconContainer from "./IconContainer";
+import UserName from "./UserName";
+import InstaImage from "./InstaImage";
+import TimeStamp from "./TimeStamp";
+import CommentForm from "./CommentForm";
+
+import "./PostContainer.css";
+
+const PostContainer = props => {
   return (
     <div className="post-container">
-      <div className="username-container">
-        <img
-          className="user-thumbnail"
-          src={props.thumbnailUrl}
-          alt={props.username}
-        />
-        <span className="username">{props.username}</span>
-      </div>
-      <div className="image-container">
-        <img
-          className="image-post"
-          src={props.imageUrl}
-          alt={`${props.username}'s post`}
-        />
-      </div>
-      <IconContainer likes={props.likes} />
-      <CommentSection comments={props.comments} />
+      <UserName thumbnailUrl={props.thumbnailUrl} username={props.username} />
+      <InstaImage
+        imageUrl={props.imageUrl}
+        username={`${props.username}'s post`}
+      />
+      <section className="comment-section-container">
+        <IconContainer likes={props.likes} />
+        <CommentSection comments={props.comments} />
+        <TimeStamp />
+        <CommentForm />
+      </section>
     </div>
   );
-}
-
-/* 
-  key={post.imageUrl}
-  username={post.username}
-  thumbnailUrl={post.thumbnailUrl}
-  imageUrl={post.imageUrl}
-  timestamp={post.timestamp}
-  likes={post.likes}
-  comments={post.comments}
-*/
+};
 
 PostContainer.propTypes = {
   username: PropTypes.string.isRequired,

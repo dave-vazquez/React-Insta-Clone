@@ -1,12 +1,13 @@
-import React from 'react';
-import './SearchBar.css';
+import React from "react";
+import "./SearchBar.css";
 
-class SearchInput extends React.Component {
+class SearchBar extends React.Component {
   state = {
-    searchInput: ''
+    searchInput: ""
   };
 
   onChangeHandler = e => {
+    e.target.textAlign = "left";
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -14,12 +15,13 @@ class SearchInput extends React.Component {
     return (
       <div className="search-bar">
         <form name="search bar">
+          <span className="fa fa-search" />
           <input
-            name="searchInput"
-            value={this.state.searchInput}
             className="search-input"
-            placeholder="Search"
+            name="searchInput"
             type="text"
+            value={this.state.searchInput}
+            placeholder="Search"
             onChange={this.onChangeHandler}
           />
         </form>
@@ -28,4 +30,4 @@ class SearchInput extends React.Component {
   }
 }
 
-export default SearchInput;
+export default SearchBar;

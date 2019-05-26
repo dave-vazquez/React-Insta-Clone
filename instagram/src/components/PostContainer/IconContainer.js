@@ -1,19 +1,82 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './PostContainer.css';
+import React from "react";
+import PropTypes from "prop-types";
+import "./PostContainer.css";
 
 function IconContainer(props) {
   return (
     <div className="icon-container">
-      <i className="la la-heart-o">H</i>
-      <i className="la la-comment">C</i>
-      <span className="like-count">{props.likes}</span>
+      <div className="icons">
+        <HeartsSVG />
+        <CommentSVG />
+      </div>
+      <p className="like-count">{props.likes} likes</p>
     </div>
   );
 }
 
 IconContainer.propTypes = {
   likes: PropTypes.number
+};
+
+const HeartsSVG = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      width="27"
+      height="27"
+      viewBox="0 0 191 191"
+      style={{ fill: "#000000" }}
+    >
+      <path d="M0,191.99219v-191.99219h191.99219v191.99219z" fill="none" />
+      <g fill="#000000">
+        <g id="surface1">
+          <path d="M62.5525,34.38c-23.90484,0 -43.4525,19.30891 -43.4525,43.09438c0,48.77961 55.34523,74.32586 74.0125,89.77l2.3875,2.02938l2.3875,-2.02938c18.66727,-15.44414 74.0125,-40.99039 74.0125,-89.77c0,-23.78547 -19.54765,-43.09437 -43.4525,-43.09437c-13.28047,0 -24.97922,6.16273 -32.9475,15.51875c-7.96828,-9.35602 -19.66703,-15.51875 -32.9475,-15.51875zM62.5525,42.02c12.47469,0 23.32289,6.31195 29.72437,15.87687l3.22313,4.775l3.22312,-4.775c6.40148,-9.56492 17.24969,-15.87687 29.72437,-15.87687c19.80133,0 35.8125,15.83211 35.8125,35.45438c0,41.63203 -46.83977,64.96985 -68.76,82.13c-21.92023,-17.16015 -68.76,-40.49797 -68.76,-82.13c0,-19.62227 15.99625,-35.45437 35.8125,-35.45437z" />
+        </g>
+      </g>
+    </svg>
+  );
+};
+
+const CommentSVG = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      width="22"
+      height="22"
+      viewBox="0 0 191 191"
+      style={{ fill: "#000000" }}
+    >
+      {/* <g transform="translate(28.79883,28.79883) scale(0.7,0.7)">
+        <g
+          fill="none"
+          fill-rule="nonzero"
+          stroke="none"
+          stroke-width="1"
+          stroke-linecap="butt"
+          stroke-linejoin="miter"
+          stroke-miterlimit="10"
+          stroke-dasharray=""
+          stroke-dashoffset="0"
+          font-family="none"
+          font-weight="none"
+          font-size="none"
+          text-anchor="none"
+          style="mix-blend-mode: normal"
+        > */}
+      <path d="M0,191.99219v-191.99219h191.99219v191.99219z" fill="none" />
+      <g fill="#000000">
+        <g id="surface1">
+          <path d="M95.5,22.92c44.22844,0 80.22,30.8286 80.22,68.73016c0,37.90156 -35.99156,68.74508 -80.22,68.74508c-6.75961,0 -13.34015,-0.77594 -20.11469,-2.35765l-4.52133,-1.05945l-3.02914,3.52156c-2.61133,3.05898 -11.38539,12.04195 -25.85961,14.56375c2.76055,-4.9839 4.84961,-10.05734 6.22242,-15.13078c1.05945,-3.9543 1.25344,-6.02844 1.31312,-7.83399l0.17906,-4.26765l-3.53649,-2.3875c-19.62226,-13.26555 -30.87336,-32.87289 -30.87336,-53.79336c0,-37.90156 35.99156,-68.73016 80.22,-68.73016M95.5,15.28c-48.40656,0 -87.86,33.91742 -87.86,76.37016c0,24.65094 13.48938,46.10859 34.23078,60.12023c-0.02985,0.8207 0.02984,2.16367 -1.05945,6.16273c-1.32805,4.96898 -4.04383,11.95242 -9.53508,19.83117l-3.90953,5.5957h6.8193c23.65117,0 37.33453,-15.4143 39.45344,-17.89133c7.04313,1.65633 14.29515,2.56656 21.86055,2.56656c48.40656,0 87.86,-33.91742 87.86,-76.38508c0,-42.45274 -39.45344,-76.37016 -87.86,-76.37016z" />
+        </g>
+      </g>
+      {/* </g>
+      </g> */}
+    </svg>
+  );
 };
 
 export default IconContainer;
