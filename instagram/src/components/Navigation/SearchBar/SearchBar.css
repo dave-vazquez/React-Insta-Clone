@@ -1,29 +1,32 @@
 .search-input {
-  width: 200px;
-  height: 25px;
-  text-align: center;
+  width: 220px;
+  height: 30px;
 
-  /* padding-left: 40px; */
-
-  background-color: #fafafa;
+  padding-left: 90px;
 
   border: 1px solid #dbdbdb;
   border-radius: 5px;
 
+  color: #9a9a9a;
+  font-size: 0.8rem;
+  text-align: left;
+
   background-repeat: no-repeat;
-  background-position: 63px 6px;
+  background-position: 70px 7px;
   background-image: url("https://img.icons8.com/ios/12/000000/search-filled.png");
+
+  background-color: #fafafa;
 
   text-overflow: ellipsis;
   outline: none;
 }
 
-.search-input:not(:placeholder-shown) {
-  padding-left: 40px;
-}
+/* .search-input:not(:placeholder-shown) {
+  padding-left: 0px;
+} */
 
 .search-input:focus {
   text-align: left;
   padding-left: 30px;
-  background-position: 9px 6px;
+  background-position: 9px 7px;
 }

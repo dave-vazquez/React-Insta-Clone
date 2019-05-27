@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import PostContainer from "./components/PostContainer/PostContainer";
 import posts from "./dummy-data";
@@ -29,25 +30,29 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="app-container">
-        <Navigation
-          filterPosts={this.filterPosts}
-          resetPosts={this.resetPosts}
-        />
-        <div className="main-content">
-          {this.state.posts.map((post, i) => (
-            <PostContainer
-              key={i}
-              username={post.username}
-              thumbnailUrl={post.thumbnailUrl}
-              imageUrl={post.imageUrl}
-              timestamp={post.timestamp}
-              likes={post.likes}
-              comments={post.comments}
-            />
-          ))}
+      <Router>
+        <div className="app-container">
+          <Navigation
+            filterPosts={this.filterPosts}
+            resetPosts={this.resetPosts}
+          />
+          <div className="main-content">
+            <div style={{ height: "80px" }} />
+            {this.state.posts.map((post, i) => (
+              <PostContainer
+                key={i}
+                username={post.username}
+                thumbnailUrl={post.thumbnailUrl}
+                imageUrl={post.imageUrl}
+                timestamp={post.timestamp}
+                likes={post.likes}
+                comments={post.comments}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+        <Route exact path="/" />
+      </Router>
     );
   }
 }
