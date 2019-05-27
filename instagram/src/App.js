@@ -6,19 +6,21 @@ import Navigation from "./components/Navigation/Navigation";
 
 class App extends React.Component {
   state = {
-    posts
+    posts: []
   };
 
-  componentDidMount() {}
+  componentDidMount = () => {
+    this.setState({ posts: posts });
+  };
 
   render() {
     return (
       <div className="app-container">
         <Navigation />
         <div className="main-content">
-          {this.state.posts.map(post => (
+          {this.state.posts.map((post, i) => (
             <PostContainer
-              key={post.imageUrl}
+              key={i}
               username={post.username}
               thumbnailUrl={post.thumbnailUrl}
               imageUrl={post.imageUrl}

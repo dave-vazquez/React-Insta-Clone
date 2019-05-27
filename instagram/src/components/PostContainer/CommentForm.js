@@ -10,9 +10,18 @@ class CommentForm extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  onSubmitHandler = event => {
+    event.preventDefault();
+    this.props.addNewComment(this.state.comment);
+
+    this.setState({
+      comment: ""
+    });
+  };
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.onSubmitHandler}>
         <input
           className="comment-input"
           name="comment"
@@ -20,6 +29,7 @@ class CommentForm extends React.Component {
           value={this.state.comment}
           onChange={this.onChangeHandler}
         />
+        <button onSubmit={this.onSubmitHandler}>Add</button>
       </form>
     );
   }

@@ -4,6 +4,18 @@ import Comment from "./Comment";
 import "./CommentSection.css";
 
 class CommentSection extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      comments: []
+    };
+  }
+
+  componentDidMount = () => {
+    this.setState({ comments: this.props.comments });
+  };
+
   render() {
     return (
       <div className="comment-section">

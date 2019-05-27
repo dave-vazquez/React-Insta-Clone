@@ -1,17 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Navigation.css";
 
 const NavIcons = () => (
   <div className="nav-icon-container">
-    <a className="nav-location" href="#">
+    <Link className="nav-location" to="/">
       <CompassSVG />
-    </a>
-    <a href="#">
+    </Link>
+    <Link to="/">
       <HeartsSVG />
-    </a>
-    <a href="#">
+    </Link>
+    <Link to="/">
       <ProfileSVG />
-    </a>
+    </Link>
   </div>
 );
 
