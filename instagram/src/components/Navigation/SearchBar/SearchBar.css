@@ -1,0 +1,29 @@
+.search-input {
+  width: 200px;
+  height: 25px;
+  text-align: center;
+
+  /* padding-left: 40px; */
+
+  background-color: #fafafa;
+
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+
+  background-repeat: no-repeat;
+  background-position: 63px 6px;
+  background-image: url("https://img.icons8.com/ios/12/000000/search-filled.png");
+
+  text-overflow: ellipsis;
+  outline: none;
+}
+
+.search-input:not(:placeholder-shown) {
+  padding-left: 40px;
+}
+
+.search-input:focus {
+  text-align: left;
+  padding-left: 30px;
+  background-position: 9px 6px;
+}

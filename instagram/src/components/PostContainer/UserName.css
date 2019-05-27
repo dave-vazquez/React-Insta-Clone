@@ -1,0 +1,25 @@
+.username-container {
+  display: flex;
+  align-items: center;
+
+  height: 45px;
+
+  padding: 0 10px;
+
+  background-color: white;
+}
+
+.user-thumbnail {
+  width: 25px;
+  height: 25px;
+
+  border-radius: 50%;
+}
+
+.username {
+  margin-left: 10px;
+
+  font-family: "Lato", sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
