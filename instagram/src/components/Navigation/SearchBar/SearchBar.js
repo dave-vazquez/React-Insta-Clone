@@ -16,6 +16,12 @@ class SearchBar extends React.Component {
     this.props.filterPosts(this.state.searchInput);
   };
 
+  onBlurHandler = () => {
+    if (this.state.searchInput === "") {
+      this.props.resetPosts();
+    }
+  };
+
   render() {
     return (
       <div className="search-bar">

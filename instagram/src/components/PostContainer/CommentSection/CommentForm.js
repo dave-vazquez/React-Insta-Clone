@@ -2,9 +2,15 @@ import React from "react";
 import "./CommentForm.css";
 
 class CommentForm extends React.Component {
-  state = {
-    comment: ""
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      comment: ""
+    };
+
+    this.whiteSpaceRegex = /\S/;
+  }
 
   onChangeHandler = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -12,16 +18,23 @@ class CommentForm extends React.Component {
 
   onSubmitHandler = event => {
     event.preventDefault();
-    this.props.addNewComment(this.state.comment);
 
-    this.setState({
-      comment: ""
-    });
+    if (!this.commentIsEmpty()) {
+      this.props.addNewComment(this.state.comment);
+
+      this.setState({
+        comment: ""
+      });
+    }
+  };
+
+  commentIsEmpty = () => {
+    return !this.whiteSpaceRegex.test(this.state.comment);
   };
 
   render() {
     return (
-      <form onSubmit={this.onSubmitHandler}>
+      <form className="comment-form" onSubmit={this.onSubmitHandler}>
         <input
           className="comment-input"
           name="comment"
@@ -29,7 +42,13 @@ class CommentForm extends React.Component {
           value={this.state.comment}
           onChange={this.onChangeHandler}
         />
-        {/* <button onSubmit={this.onSubmitHandler}>Add</button> */}
+        <button
+          className={`post-button ${!this.commentIsEmpty() ? "dark-blue" : ""}`}
+          onSubmit={this.onSubmitHandler}
+          disabled={this.commentIsEmpty()}
+        >
+          Post
+        </button>
       </form>
     );
   }
