@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Comment from "./Comment";
-import TimeStamp from "./TimeStamp";
-import CommentForm from "./CommentForm";
+import Comment from "./Comment/Comment";
+import TimeStamp from "./TimeStamp/TimeStamp";
+import CommentForm from "./CommentForm/CommentForm";
 import "./CommentSection.css";
 
 class CommentSection extends React.Component {

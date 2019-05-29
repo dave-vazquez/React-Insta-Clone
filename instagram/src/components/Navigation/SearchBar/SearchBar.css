@@ -2,7 +2,7 @@
   width: 220px;
   height: 30px;
 
-  padding-left: 90px;
+  padding-left: 30px;
 
   border: 1px solid #dbdbdb;
   border-radius: 5px;
@@ -11,7 +11,7 @@
   text-align: left;
 
   background-repeat: no-repeat;
-  background-position: 70px 7px;
+  background-position: 9px 7px;
   background-image: url("https://img.icons8.com/ios/12/000000/search-filled.png");
 
   background-color: #fafafa;
@@ -19,16 +19,8 @@
   text-overflow: ellipsis;
   outline: none;
 }
+
 .search-input::placeholder {
   color: #a2a2a2;
 }
 
-/* .search-input:not(:placeholder-shown) {
-  padding-left: 0px;
-} */
-
-.search-input:focus {
-  text-align: left;
-  padding-left: 30px;
-  background-position: 9px 7px;
-}

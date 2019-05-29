@@ -1,7 +1,8 @@
 import React from "react";
+
+import NavLogo from "./NavLogo/NavLogo";
 import SearchBar from "./SearchBar/SearchBar";
-import NavLogo from "./NavLogo";
-import NavIcons from "./NavIcons";
+import NavIcons from "./NavIcons/NavIcons";
 
 import "./Navigation.css";
 
