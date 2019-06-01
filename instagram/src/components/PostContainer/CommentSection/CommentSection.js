@@ -33,9 +33,9 @@ class CommentSection extends React.Component {
   render() {
     return (
       <div className="comment-section">
-        {this.state.comments.map(comment => (
+        {this.state.comments.map((comment, i) => (
           <Comment
-            key={`${comment.username}${comment.text}`} // joined two props to form a unique key
+            key={i} // joined two props to form a unique key
             comment={comment}
           />
         ))}
