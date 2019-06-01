@@ -16,7 +16,7 @@ class Navigation extends React.Component {
             filterPosts={this.props.filterPosts}
             resetPosts={this.props.resetPosts}
           />
-          <NavIcons />
+          <NavIcons showLogOutPopUp={this.props.showLogOutPopUp} />
         </nav>
       </div>
     );

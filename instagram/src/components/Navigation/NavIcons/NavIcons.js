@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import "./NavIcons.css";
 
 class NavIcons extends React.Component {
+  onClickHandler = e => {
+    console.log("click", e.target.name);
+    this.props.showLogOutPopUp(true);
+  };
+
   render() {
     return (
       <div className="nav-icon-container">
@@ -12,9 +17,7 @@ class NavIcons extends React.Component {
         <Link to="/">
           <HeartsSVG />
         </Link>
-        <Link to="/">
-          <ProfileSVG />
-        </Link>
+        <ProfileSVG onClickHandler={this.onClickHandler} />
       </div>
     );
   }
@@ -62,7 +65,7 @@ const HeartsSVG = () => {
   );
 };
 
-const ProfileSVG = () => {
+const ProfileSVG = props => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +74,8 @@ const ProfileSVG = () => {
       width="34"
       height="34"
       viewBox="0 0 192 192"
-      style={{ fill: "#000000" }}
+      style={{ fill: "#000000", cursor: "pointer" }}
+      onClick={props.onClickHandler}
     >
       <path d="M0,192v-192h192v192z" fill="none" />
       <g fill="#333333">
