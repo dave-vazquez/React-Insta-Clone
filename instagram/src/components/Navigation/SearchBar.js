@@ -7,19 +7,19 @@ class SearchBar extends React.Component {
   };
 
   onChangeHandler = e => {
-    e.target.textAlign = "left";
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState(
+      {
+        [e.target.name]: e.target.value
+      },
+      () => {
+        this.props.filterPosts(this.state.searchInput);
+      }
+    );
   };
 
   onSubmitHandler = e => {
     e.preventDefault();
     this.props.filterPosts(this.state.searchInput);
-  };
-
-  onBlurHandler = () => {
-    if (this.state.searchInput === "") {
-      this.props.resetPosts();
-    }
   };
 
   render() {

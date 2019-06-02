@@ -1,33 +1,46 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import "./PostsPage.css";
+import Fuse from "fuse.js";
+
 import PostContainer from "../PostContainer/PostContainer";
-import posts from "../../posts.js";
 import Navigation from "../Navigation/Navigation";
 import LogOutPopUp from "../LogOutPopUp/LogOutPopUp";
 
+import posts from "../../posts.js";
+import "./PostsPage.css";
+
 class PostsPage extends React.Component {
-  state = {
-    posts: [],
-    showLogOutPopUp: false
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      posts: [],
+      showLogOutPopUp: false
+    };
+
+    this.fuse = new Fuse(posts, {
+      shouldSort: true,
+      threshold: 0.6,
+      location: 0,
+      distance: 100,
+      maxPatternLength: 32,
+      minMatchCharLength: 1,
+      keys: ["username"]
+    });
+  }
 
   componentDidMount = () => {
     this.setState({ posts: posts });
   };
 
   filterPosts = username => {
-    let filteredPosts = posts.filter(post => post.username === username);
+    let filteredPosts = this.fuse.search(username);
 
     this.setState({
       posts: username === "" ? posts : filteredPosts
     });
 
     return filteredPosts.length > 0;
-  };
-
-  resetPosts = () => {
-    this.setState({ posts: posts });
   };
 
   showLogOutPopUp = show => {
