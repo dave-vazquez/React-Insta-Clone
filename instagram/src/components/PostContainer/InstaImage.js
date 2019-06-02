@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./InstaImage.css";
+import "./css/InstaImage.css";
 
 class InstaImage extends React.Component {
   render() {

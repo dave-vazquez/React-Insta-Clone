@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./NavIcons.css";
+import "./css/NavIcons.css";
 
 class NavIcons extends React.Component {
   onClickHandler = e => {

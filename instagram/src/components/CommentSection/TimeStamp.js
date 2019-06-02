@@ -1,5 +1,5 @@
 import React from "react";
-import "./TimeStamp.css";
+import "./css/TimeStamp.css";
 
 const TimeStamp = () => <p className="time-stamp">2 HOURS AGO</p>;
 

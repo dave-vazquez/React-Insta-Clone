@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import "../../App.css";
+import "./PostsPage.css";
 import PostContainer from "../PostContainer/PostContainer";
-import posts from "../../dummy-data";
+import posts from "../../posts.js";
 import Navigation from "../Navigation/Navigation";
-import LogOutPopUp from "./LogOutPopUp/LogOutPopUp";
+import LogOutPopUp from "../LogOutPopUp/LogOutPopUp";
 
 class PostsPage extends React.Component {
   state = {
@@ -39,7 +39,7 @@ class PostsPage extends React.Component {
   render() {
     return (
       <Router>
-        <div className="app-container">
+        <div className="posts-page-container">
           {this.state.showLogOutPopUp && (
             <LogOutPopUp
               showLogOutPopUp={this.showLogOutPopUp}

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import instagram from "../../../assets/instagram.png";
+import instagram from "../../assets/instagram.png";
 
-import "./NavLogo.css";
+import "./css/NavLogo.css";
 
 class NavLogo extends React.Component {
   render() {

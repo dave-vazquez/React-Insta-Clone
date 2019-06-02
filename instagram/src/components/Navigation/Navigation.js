@@ -1,10 +1,10 @@
 import React from "react";
 
-import NavLogo from "./NavLogo/NavLogo";
-import SearchBar from "./SearchBar/SearchBar";
-import NavIcons from "./NavIcons/NavIcons";
+import NavLogo from "./NavLogo";
+import SearchBar from "./SearchBar";
+import NavIcons from "./NavIcons";
 
-import "./Navigation.css";
+import "./css/Navigation.css";
 
 class Navigation extends React.Component {
   render() {

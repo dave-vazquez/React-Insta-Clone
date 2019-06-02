@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import "./IconContainer.css";
+import "./css/IconContainer.css";
 
 class IconContainer extends React.Component {
   constructor(props) {

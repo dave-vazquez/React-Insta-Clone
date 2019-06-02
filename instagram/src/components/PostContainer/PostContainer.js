@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import UserName from "./UserName/UserName";
-import InstaImage from "./InstaImage/InstaImage";
-import IconContainer from "./IconContainer/IconContainer";
-import CommentSection from "./CommentSection/CommentSection";
+import UserName from "./UserName";
+import InstaImage from "./InstaImage";
+import IconContainer from "./IconContainer";
+import CommentSection from "../CommentSection/CommentSection";
 
-import "./PostContainer.css";
+import "./css/PostContainer.css";
 
 class PostContainer extends React.Component {
   constructor(props) {

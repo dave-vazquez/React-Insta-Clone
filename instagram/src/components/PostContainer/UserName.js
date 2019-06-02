@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./UserName.css";
+import "./css/UserName.css";
 
 class UserName extends React.Component {
   render() {
