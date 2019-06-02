@@ -1,7 +1,6 @@
 import React from "react";
 import instagram from "../../assets/instagram.png";
-
-import "./LoginPage.css";
+import "./LoginPage.css"
 
 class LoginPage extends React.Component {
   state = {

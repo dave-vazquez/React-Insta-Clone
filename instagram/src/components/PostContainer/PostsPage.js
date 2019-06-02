@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "../../App.css";
 import PostContainer from "../PostContainer/PostContainer";
 import posts from "../../dummy-data";
@@ -37,33 +38,36 @@ class PostsPage extends React.Component {
 
   render() {
     return (
-      <div className="app-container">
-        {this.state.showLogOutPopUp && (
-          <LogOutPopUp
-            showLogOutPopUp={this.showLogOutPopUp}
-            logOut={this.props.logOut}
-          />
-        )}
-        <Navigation
-          filterPosts={this.filterPosts}
-          resetPosts={this.resetPosts}
-          showLogOutPopUp={this.showLogOutPopUp}
-        />
-        <div className="main-content">
-          <div style={{ height: "80px" }} />
-          {this.state.posts.map((post, i) => (
-            <PostContainer
-              key={i}
-              username={post.username}
-              thumbnailUrl={post.thumbnailUrl}
-              imageUrl={post.imageUrl}
-              timestamp={post.timestamp}
-              likes={post.likes}
-              comments={post.comments}
+      <Router>
+        <div className="app-container">
+          {this.state.showLogOutPopUp && (
+            <LogOutPopUp
+              showLogOutPopUp={this.showLogOutPopUp}
+              logOut={this.props.logOut}
             />
-          ))}
+          )}
+          <Navigation
+            filterPosts={this.filterPosts}
+            resetPosts={this.resetPosts}
+            showLogOutPopUp={this.showLogOutPopUp}
+          />
+          <div className="main-content">
+            <div style={{ height: "80px" }} />
+            {this.state.posts.map((post, i) => (
+              <PostContainer
+                key={i}
+                username={post.username}
+                thumbnailUrl={post.thumbnailUrl}
+                imageUrl={post.imageUrl}
+                timestamp={post.timestamp}
+                likes={post.likes}
+                comments={post.comments}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+        <Route exact path="/" />
+      </Router>
     );
   }
 }
