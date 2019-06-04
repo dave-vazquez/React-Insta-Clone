@@ -30,6 +30,7 @@ class PostContainer extends React.Component {
         <section className="comment-section-container">
           <IconContainer likes={this.props.likes} />
           <CommentSection
+            postID={this.props.postID}
             comments={this.state.comments}
             addNewComment={this.addNewComment}
           />

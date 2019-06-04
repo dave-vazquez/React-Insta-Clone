@@ -66,9 +66,10 @@ class PostsPage extends React.Component {
           />
           <div className="main-content">
             <div style={{ height: "80px" }} />
-            {this.state.posts.map((post, i) => (
+            {this.state.posts.map(post => (
               <PostContainer
-                key={i}
+                key={post.id}
+                postID={post.id}
                 username={post.username}
                 thumbnailUrl={post.thumbnailUrl}
                 imageUrl={post.imageUrl}

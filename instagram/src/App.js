@@ -3,7 +3,7 @@ import "./App.css";
 
 import PostsPage from "./components/PostsPage/PostsPage";
 import withAuthenticate from "./authentication/withAuthenticate";
-import LoginPage from "./components/Login/LoginPage";
+import LoginPage from "./components/LoginPage/LoginPage";
 
 const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)(LoginPage);
 
