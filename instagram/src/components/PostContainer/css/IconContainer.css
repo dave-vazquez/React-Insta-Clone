@@ -1,0 +1,21 @@
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70px;
+
+  margin-left: -5px;
+}
+
+.like-count {
+  margin-top: 5px;
+  font-family: "Lato", sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+}

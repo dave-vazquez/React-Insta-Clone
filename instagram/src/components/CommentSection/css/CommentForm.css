@@ -1,0 +1,45 @@
+.comment-form {
+  display: flex;
+  align-items: center;
+
+  margin-top: 10px;
+  border-top: 1px solid #e7e7e7;
+}
+
+.comment-input {
+  width: 90%;
+  height: 45px;
+
+  border: none;
+  outline: none;
+
+  font-family: "Lato", serif;
+  font-size: 0.8rem;
+
+  background-color: white;
+
+  outline: none;
+}
+
+.comment-input::placeholder {
+  color: #a2a2a2;
+}
+
+.post-button {
+  width: 10%;
+  height: 45px;
+
+  border: none;
+  background: white;
+
+  color: #c3e0fb;
+  font-family: "Lato", serif;
+  font-size: 0.8rem;
+
+  cursor: pointer;
+  outline: none;
+}
+
+.dark-blue {
+  color: #4aa1f2;
+}

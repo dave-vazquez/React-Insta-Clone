@@ -1,0 +1,19 @@
+.post-container {
+  width: 100%;
+  height: fit-content;
+
+  margin-top: 20px;
+  border: 1px solid #e7e7e7;
+}
+
+.comment-section-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: fit-content;
+  padding-top: 10px;
+  padding-left: 15px;
+
+  background-color: white;
+}
